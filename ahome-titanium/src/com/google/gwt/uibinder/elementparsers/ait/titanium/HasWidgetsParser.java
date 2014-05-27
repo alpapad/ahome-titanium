@@ -13,7 +13,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-package com.google.gwt.uibinder.elementparsers.gwt4;
+package com.google.gwt.uibinder.elementparsers.ait.titanium;
 
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JClassType;
