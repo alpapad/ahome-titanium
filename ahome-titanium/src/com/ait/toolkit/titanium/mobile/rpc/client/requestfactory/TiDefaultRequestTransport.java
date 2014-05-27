@@ -32,7 +32,7 @@ import com.google.web.bindery.requestfactory.shared.RequestFactory;
  * You should extends this class and override the getHost method.
  * 
  */
-public class Ti4jMobileDefaultRequestTransport extends DefaultRequestTransport {
+public class TiDefaultRequestTransport extends DefaultRequestTransport {
 
 	/**
 	 * convenient method to create an instance of
@@ -40,8 +40,8 @@ public class Ti4jMobileDefaultRequestTransport extends DefaultRequestTransport {
 	 * 
 	 * @return an instance of TiMobileDefaultRequestTransport
 	 */
-	public static Ti4jMobileDefaultRequestTransport create() {
-		return new Ti4jMobileDefaultRequestTransport();
+	public static TiDefaultRequestTransport create() {
+		return new TiDefaultRequestTransport();
 	}
 
 	/**
