@@ -47,6 +47,7 @@ public class Accelerometer extends TiModule {
 	 * @param handler
 	 *            , the handler that will handle the event
 	 */
+
 	public native void addUpdateHandler(UpdateHandler handler)/*-{
 		var jso = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		var listener = function(e) {
@@ -55,22 +56,6 @@ public class Accelerometer extends TiModule {
 		};
 		var name = @com.ait.toolkit.titanium.mobile.client.core.events.UpdateEvent::UPDATE;
 		jso.addEventListener(name, listener);
-
-	}-*/;
-
-	/**
-	 * Removes the update handler
-	 * 
-	 * @param handler
-	 */
-	public native void removeUpdateHandler(UpdateHandler handler)/*-{
-		var jso = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
-		var listener = function(e) {
-			var eventObject = @com.ait.toolkit.titanium.mobile.client.core.events.UpdateEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-			handler.@com.ait.toolkit.titanium.mobile.client.core.handlers.UpdateHandler::onUpdate(Lcom/ait/toolkit/titanium/mobile/client/core/events/UpdateEvent;)(eventObject);
-		};
-		var name = @com.ait.toolkit.titanium.mobile.client.core.events.UpdateEvent::UPDATE;
-		jso.removeEventListener(name, listener);
 
 	}-*/;
 

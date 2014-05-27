@@ -20,32 +20,27 @@ import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.CallbackRegistrat
 import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.PostLayoutEventHandler;
 
 /**
- * Base class of all ui objects. Any subclass if this class muss implement the
- * way of creating the underlying titanium ui object by overriding the
- * <code>createPeer()</code> method.
+ * Base class of all ui objects. Any subclass if this class muss implement the way of creating the underlying titanium ui object by overriding the <code>createPeer()</code> method.
  */
 public abstract class UIObject extends EventDispatcher {
-    public abstract void createPeer();
+	public abstract void createPeer();
 
-    /**
-     * fired when a layout cycle completes
-     * 
-     * @param handler
-     */
-    public native CallbackRegistration addPostLayoutHandler(PostLayoutEventHandler handler) /*-{
-    	
+	/**
+	 * fired when a layout cycle completes
+	 * 
+	 * @param handler
+	 */
+	public native CallbackRegistration addPostLayoutHandler(PostLayoutEventHandler handler) /*-{
+
 		var jso = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		var listener = function(e) {
-							var eventObject = @com.ait.toolkit.titanium.mobile.client.core.events.TiEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.ait.toolkit.titanium.mobile.client.core.handlers.ui.PostLayoutEventHandler::onPostLayout(Lcom/ait/toolkit/titanium/mobile/client/core/events/TiEvent;)(eventObject);
-						};
+			var eventObject = @com.ait.toolkit.titanium.mobile.client.core.events.TiEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+			handler.@com.ait.toolkit.titanium.mobile.client.core.handlers.ui.PostLayoutEventHandler::onPostLayout(Lcom/ait/toolkit/titanium/mobile/client/core/events/TiEvent;)(eventObject);
+		};
 		var name = @com.ait.toolkit.titanium.mobile.client.core.events.TiEvent::POST_LAYOUT;
-		var v = jso
-				.addEventListener(
-						name,
-						listener);
-		var toReturn = @com.ait.toolkit.titanium.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/ait/toolkit/titanium/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		var v = jso.addEventListener(name, listener);
+		var toReturn = @com.ait.toolkit.titanium.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/ait/toolkit/titanium/mobile/client/core/events/EventDispatcher;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
 		return toReturn;
-						
-    }-*/;
+
+	}-*/;
 }

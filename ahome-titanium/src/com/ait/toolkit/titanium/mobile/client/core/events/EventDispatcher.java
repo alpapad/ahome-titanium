@@ -29,8 +29,7 @@ public abstract class EventDispatcher extends JsObject {
 
 	}
 
-	private final native void addEventListener(String event,
-			JavaScriptObject listener) /*-{
+	private final native void addEventListener(String event, JavaScriptObject listener) /*-{
 		var jso = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		jso.addEventListener(event, listener);
 	}-*/;
@@ -43,13 +42,12 @@ public abstract class EventDispatcher extends JsObject {
 	 * @param listener
 	 *            , EventListner passed in addEventListener
 	 */
-	public final void removeEventListner(String event,
-			TiEventListener<? extends TiEvent> listener) {
+	@Deprecated
+	public final void removeEventListner(String event, TiEventListener<? extends TiEvent> listener) {
 		removeEventListener(event, listener.getJsoPeer());
 	}
 
-	private final native void removeEventListener(String event,
-			JavaScriptObject listener) /*-{
+	private final native void removeEventListener(String event, JavaScriptObject listener) /*-{
 		var jso = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		jso.removeEventListener(event, listener);
 	}-*/;
@@ -73,8 +71,8 @@ public abstract class EventDispatcher extends JsObject {
 	 * @param listener
 	 *            , callback function to invoke when the event is fired
 	 */
-	public void addEventListener(String event,
-			TiEventListener<? extends TiEvent> listener) {
+	@Deprecated
+	public void addEventListener(String event, TiEventListener<? extends TiEvent> listener) {
 		addEventListener(event, listener.getJsoPeer());
 	}
 
