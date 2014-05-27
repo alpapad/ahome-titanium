@@ -16,29 +16,30 @@
 package com.ait.toolkit.titanium.mobile.client.core.events.battery;
 
 import com.ait.toolkit.titanium.mobile.client.core.events.TiEvent;
+import com.google.gwt.core.client.JavaScriptObject;
 
 public class BatteryEvent extends TiEvent {
 
-    public static final String BATTERY = "battery";
+	public static final String BATTERY = "battery";
 
-    protected BatteryEvent() {
+	protected BatteryEvent(JavaScriptObject obj) {
+		jsObj = obj;
+	}
 
-    }
-
-    /**
-     * the new battery state
-     */
-    public final native int getState() /*-{
+	/**
+	 * the new battery state
+	 */
+	public final native int getState() /*-{
 		var jso = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		return jso.state;
-    }-*/;
+	}-*/;
 
-    /**
-     * the new battery level
-     */
-    public final native int getLevel() /*-{
+	/**
+	 * the new battery level
+	 */
+	public final native int getLevel() /*-{
 		var jso = this.@com.ait.toolkit.core.client.JsObject::getJsObj()()
 		return jso.level;
-    }-*/;
+	}-*/;
 
 }
