@@ -15,7 +15,7 @@
  */
 package com.google.gwt.json.client;
 
-import com.ait.toolkit.titanium.mobile.client.core.Utils;
+import com.ait.toolkit.titanium.mobile.client.core.TiUtils;
 import com.google.gwt.core.client.JavaScriptException;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -122,7 +122,7 @@ public class JSONParser {
      * object.
      */
     private static JSONValue createObject(Object o) {
-        if (!Utils.isWebMode()) {
+        if (!TiUtils.isWebMode()) {
             return _createObjectForTi(o);
         }
         return _createObject(o);

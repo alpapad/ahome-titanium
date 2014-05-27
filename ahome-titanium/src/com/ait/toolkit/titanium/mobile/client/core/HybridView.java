@@ -13,7 +13,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-package com.ait.toolkit.titanium.mobile.hybrid.client;
+package com.ait.toolkit.titanium.mobile.client.core;
 
 import com.ait.toolkit.titanium.mobile.client.core.events.ui.UIEvent;
 import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.UIEventHandler;

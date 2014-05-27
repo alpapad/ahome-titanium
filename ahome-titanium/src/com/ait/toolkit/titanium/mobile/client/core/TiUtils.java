@@ -21,13 +21,13 @@ import com.ait.toolkit.titanium.mobile.client.core.events.TiEventListener;
 import com.google.gwt.core.client.JavaScriptObject;
 
 /**
- * The top level Utils module. The Utils module is a set of common functions
+ * The top level TiUtils module. The TiUtils module is a set of common functions
  * that are useful for applications
  * 
  */
-public class Utils {
+public class TiUtils {
 
-    private Utils() {
+    private TiUtils() {
 
     }
 

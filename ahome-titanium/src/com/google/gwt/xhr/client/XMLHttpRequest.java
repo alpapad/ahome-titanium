@@ -15,7 +15,7 @@
  */
 package com.google.gwt.xhr.client;
 
-import com.ait.toolkit.titanium.mobile.client.core.Utils;
+import com.ait.toolkit.titanium.mobile.client.core.TiUtils;
 import com.ait.toolkit.titanium.mobile.client.network.Network;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -89,7 +89,7 @@ public class XMLHttpRequest extends JavaScriptObject {
     }
 
     public static XMLHttpRequest create() {
-        if (!Utils.isWebMode()) {
+        if (!TiUtils.isWebMode()) {
             return createForTi();
         }
         return _create();

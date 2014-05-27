@@ -15,7 +15,7 @@
  */
 package com.google.gwt.jsonp.client;
 
-import com.ait.toolkit.titanium.mobile.client.core.Utils;
+import com.ait.toolkit.titanium.mobile.client.core.TiUtils;
 import com.ait.toolkit.titanium.mobile.client.core.json.JSON;
 import com.google.gwt.core.client.JavaScriptException;
 import com.google.gwt.core.client.JavaScriptObject;
@@ -252,7 +252,7 @@ public class JsonpRequest<T> {
                 /**
                  * This is not needed in Titanium
                  */
-                if (Utils.isWebMode()) {
+                if (TiUtils.isWebMode()) {
                     xhr.clearOnReadyStateChange();
                 }
 

@@ -13,9 +13,8 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-package com.ait.toolkit.titanium.mobile.hybrid.client.core;
+package com.ait.toolkit.titanium.mobile.client.core;
 
-import com.ait.toolkit.titanium.mobile.client.core.Utils;
 import com.google.gwt.core.client.EntryPoint;
 
 /**
@@ -26,8 +25,8 @@ public abstract class TiHybridEntryPoint implements EntryPoint {
 
     @Override
     public void onModuleLoad() {
-        if (Utils.isWebMode()) {
-            Utils.bindTi();
+        if (TiUtils.isWebMode()) {
+            TiUtils.bindTi();
             onWebLoad();
         } else {
             onNativeLoad();
