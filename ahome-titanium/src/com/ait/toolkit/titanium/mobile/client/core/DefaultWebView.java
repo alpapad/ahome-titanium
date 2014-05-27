@@ -15,24 +15,53 @@
  */
 package com.ait.toolkit.titanium.mobile.client.core;
 
+import com.ait.toolkit.titanium.mobile.client.core.events.ui.UIEvent;
+import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.UIEventHandler;
 import com.ait.toolkit.titanium.mobile.client.ui.WebView;
+import com.ait.toolkit.titanium.mobile.client.ui.Window;
 
 /**
- * Default WebView to use in Hybrid apps. Loads his content from
- * app/Resources/index.html
+ * Default WebView to use in Hybrid apps. Loads its content from app/Resources/index.html
  * 
  */
-public class DefaultWebView extends WebView {
+public class DefaultWebView {
 
-    protected static String INDEX_FILE_NAME = "index.html";
+	private static DefaultWebView INSTANCE;
+	private WebView view;
 
-    protected static final DefaultWebView INSTANCE = new DefaultWebView();
+	private static DefaultWebView _get() {
+		if (INSTANCE == null) {
+			INSTANCE = new DefaultWebView();
+		}
+		return INSTANCE;
+	}
 
-    public static DefaultWebView get() {
-        return INSTANCE;
-    }
+	public static DefaultWebView getDefault() {
+		return _get().setHostPage("index.html");
+	}
 
-    protected DefaultWebView() {
-        this.setUrl(INDEX_FILE_NAME);
-    }
+	public static DefaultWebView get(String url) {
+		return _get().setHostPage(url);
+	}
+
+	private DefaultWebView() {
+		view = new WebView();
+	}
+
+	private DefaultWebView setHostPage(String url) {
+		assert url != null;
+		view.setUrl(url);
+		return this;
+	}
+
+	public DefaultWebView setContainer(final Window parent) {
+		assert parent != null;
+		parent.addOpenHandler(new UIEventHandler() {
+			@Override
+			public void onEvent(UIEvent event) {
+				parent.add(view);
+			}
+		});
+		return this;
+	}
 }
