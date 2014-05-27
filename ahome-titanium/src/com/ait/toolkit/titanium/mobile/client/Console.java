@@ -26,7 +26,7 @@ public class Console {
 	 * @param o
 	 */
 	public static native void log(Object... args)/*-{
-		Global.console.log.apply(args);
+		console.log.apply(args);
 	}-*/;
 
 	/**
@@ -39,7 +39,7 @@ public class Console {
 	 * @param o
 	 */
 	public static native void warn(Object... args)/*-{
-		Global.console.log.apply(args);
+		console.log.apply(args);
 	}-*/;
 
 	/**
@@ -52,7 +52,7 @@ public class Console {
 	 * @param o
 	 */
 	public static native void info(Object... args)/*-{
-		Global.console.info.apply(args);
+		console.info.apply(args);
 	}-*/;
 
 	/**
@@ -65,7 +65,7 @@ public class Console {
 	 * @param o
 	 */
 	public static native void error(Object... args)/*-{
-		Global.console.error.apply(args);
+		console.error.apply(args);
 	}-*/;
 
 	/**
@@ -78,7 +78,7 @@ public class Console {
 	 * @param o
 	 */
 	public static native void debug(Object... args)/*-{
-		Global.console.debug.apply(args);
+		console.debug.apply(args);
 	}-*/;
 
 }
