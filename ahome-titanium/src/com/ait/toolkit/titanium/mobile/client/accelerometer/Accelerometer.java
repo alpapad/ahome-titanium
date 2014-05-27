@@ -18,6 +18,7 @@ package com.ait.toolkit.titanium.mobile.client.accelerometer;
 import com.ait.toolkit.titanium.mobile.client.core.TiFactory;
 import com.ait.toolkit.titanium.mobile.client.core.TiModule;
 import com.ait.toolkit.titanium.mobile.client.core.handlers.UpdateHandler;
+import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.CallbackRegistration;
 
 /**
  * The top level Accelerometer module. The Accelerometer modules contains methods and properties for using the device accelerometer.
@@ -48,7 +49,7 @@ public class Accelerometer extends TiModule {
 	 *            , the handler that will handle the event
 	 */
 
-	public native void addUpdateHandler(UpdateHandler handler)/*-{
+	public native CallbackRegistration addUpdateHandler(UpdateHandler handler)/*-{
 		var jso = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		var listener = function(e) {
 			var eventObject = @com.ait.toolkit.titanium.mobile.client.core.events.UpdateEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
@@ -56,6 +57,8 @@ public class Accelerometer extends TiModule {
 		};
 		var name = @com.ait.toolkit.titanium.mobile.client.core.events.UpdateEvent::UPDATE;
 		jso.addEventListener(name, listener);
+		var toReturn = @com.ait.toolkit.titanium.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/ait/toolkit/titanium/mobile/client/core/events/EventDispatcher;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
 
 	}-*/;
 
