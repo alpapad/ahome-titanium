@@ -2,8 +2,9 @@
 <module>
 	 <inherits name='com.ait.toolkit.titanium.mobile.MobileCore'/> 
 
-    <define-linker name="ti4jMobileLinker" class="com.ait.toolkit.titanium.mobile.linker.TiMobileLinker"/>
-    <add-linker name="ti4jMobileLinker"/>
+    <define-linker name="ahomeTiMobilePrimaryLinker" class="com.ait.toolkit.titanium.mobile.linker.TiMobilePrimaryLinker"/>
+    <define-linker name="ahomeTiMobilePreLinker" class="com.ait.toolkit.titanium.mobile.linker.TiMobileLinker"/>
+     <add-linker name="ahomeTiMobilePrimaryLinker"/>
       
     <!-- Expand the list of allowed user.agent values -->
     <!--  extend-property name="user.agent" values="timobile"/-->
