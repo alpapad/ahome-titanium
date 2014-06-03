@@ -245,7 +245,7 @@ public class Buffer extends EventDispatcher {
 	/**
 	 * @return The type of data encoding to use with `value`. required when
 	 *         `value` is a number. when `value` is a string,
-	 *         {@link com.emitrom.ti4j.mobile.codec.CHARTSET_UTF8} is the
+	 *         {@link com.ait.toolkit.titanium.mobile.examples.mobile.codec.CHARTSET_UTF8} is the
 	 *         default.
 	 */
 	public native String getType() /*-{
