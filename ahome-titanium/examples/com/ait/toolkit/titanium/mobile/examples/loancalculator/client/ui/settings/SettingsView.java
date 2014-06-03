@@ -1,13 +1,13 @@
 package com.ait.toolkit.titanium.mobile.examples.loancalculator.client.ui.settings;
 
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.core.events.ui.SwitchEvent;
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.core.handlers.ui.SwitchChangeHandler;
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.ui.Label;
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.ui.Switch;
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.ui.View;
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.ui.style.Color;
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.ui.style.Font;
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.ui.style.FontWeight;
+import com.ait.toolkit.titanium.mobile.client.core.events.ui.SwitchEvent;
+import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.SwitchChangeHandler;
+import com.ait.toolkit.titanium.mobile.client.ui.Label;
+import com.ait.toolkit.titanium.mobile.client.ui.Switch;
+import com.ait.toolkit.titanium.mobile.client.ui.View;
+import com.ait.toolkit.titanium.mobile.client.ui.style.Color;
+import com.ait.toolkit.titanium.mobile.client.ui.style.Font;
+import com.ait.toolkit.titanium.mobile.client.ui.style.FontWeight;
 
 /**
  * MainView of the loan calculator

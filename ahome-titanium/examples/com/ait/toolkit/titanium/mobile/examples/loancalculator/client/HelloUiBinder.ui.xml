@@ -1,6 +1,6 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-xmlns:ti="urn:import:com.emitrom.ti4j.mobile.client.ui" >
+xmlns:ti="urn:import:com.ait.toolkit.titanium.mobile.client.ui" >
 
     <ti:View>
 		<ti:Label ui:field="helloWorld" left="0.0" top="0">Hello World</ti:Label>

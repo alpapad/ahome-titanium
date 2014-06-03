@@ -1,6 +1,6 @@
 package com.ait.toolkit.titanium.mobile.examples.loancalculator.client.ui.settings;
 
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.ui.Tab;
+import com.ait.toolkit.titanium.mobile.client.ui.Tab;
 
 public class SettingsTab extends Tab {
 

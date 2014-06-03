@@ -1,9 +1,9 @@
 package com.ait.toolkit.titanium.mobile.examples.loancalculator.client.ui.settings;
 
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.Titanium;
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.core.events.ui.ClickEvent;
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.core.handlers.ui.ClickHandler;
-import com.ait.toolkit.titanium.mobile.examples.mobile.client.ui.Window;
+import com.ait.toolkit.titanium.mobile.client.Titanium;
+import com.ait.toolkit.titanium.mobile.client.core.events.ui.ClickEvent;
+import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.ClickHandler;
+import com.ait.toolkit.titanium.mobile.client.ui.Window;
 
 /**
  * Implements the MainWindow of the application
