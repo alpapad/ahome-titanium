@@ -20,68 +20,37 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 
 /**
- * Helper class, which, during startup, asserts that the specified user.agent
- * selection property value indeed matches the expected value for this browser /
- * user agent, thus avoid long hours debugging strange error messages when a
- * single user agent compile, typically created for testing purposes, ends up
- * being executed in the wrong browser.
+ * Helper class, which, during startup, asserts that the specified user.agent selection property value indeed matches the expected value for this browser / user agent, thus avoid
+ * long hours debugging strange error messages when a single user agent compile, typically created for testing purposes, ends up being executed in the wrong browser.
  */
 public class UserAgentAsserter implements EntryPoint {
 
-    /**
-     * Interface to provide both the compile time and runtime
-     * <code>user.agent</code> selection property value.
-     */
-    interface UserAgentProperty {
-        String getCompileTimeValue();
+	/**
+	 * Replacement for UserAgentAsserter to disable it.
+	 */
+	public static class UserAgentAsserterDisabled implements EntryPoint {
+		@Override
+		public void onModuleLoad() { /* Empty - no assertions */
+		}
+	}
 
-        String getRuntimeValue();
+	@Override
+	public void onModuleLoad() {
+		UserAgent impl = GWT.create(UserAgent.class);
 
-        boolean getUserAgentRuntimeWarning();
-    }
+		String compileTimeValue = impl.getCompileTimeValue();
+		String runtimeValue = impl.getRuntimeValue();
 
-    /**
-     * Default {@link UserAgentProperty} implementation used when
-     * {@code user.agent.runtimeWarning} is {@code false}.
-     */
-    static class UserAgentPropertyDisabled implements UserAgentProperty {
-        @Override
-        public String getCompileTimeValue() {
-            return null;
-        }
+		if (!compileTimeValue.equals(runtimeValue)) {
+			displayMismatchWarning(runtimeValue, compileTimeValue);
+		}
+	}
 
-        @Override
-        public String getRuntimeValue() {
-            return null;
-        }
-
-        @Override
-        public boolean getUserAgentRuntimeWarning() {
-            return false;
-        }
-    }
-
-    @Override
-    public void onModuleLoad() {
-        UserAgentProperty impl = GWT.create(UserAgentProperty.class);
-        if (!impl.getUserAgentRuntimeWarning()) {
-            return;
-        }
-
-        String compileTimeValue = impl.getCompileTimeValue();
-        String runtimeValue = impl.getRuntimeValue();
-
-        if (!compileTimeValue.equals(runtimeValue)) {
-            displayMismatchWarning(runtimeValue, compileTimeValue);
-        }
-    }
-
-    /**
-     * Implemented as a JSNI method to avoid potentially using any user agent
-     * specific deferred binding code, since this method is called precisely
-     * when we're somehow executing code from the wrong user.agent permutation.
-     */
-    private native void displayMismatchWarning(String runtimeValue, String compileTimeValue) /*-{
+	/**
+	 * Implemented as a JSNI method to avoid potentially using any user agent specific deferred binding code, since this method is called precisely when we're somehow executing
+	 * code from the wrong user.agent permutation.
+	 */
+	private native void displayMismatchWarning(String runtimeValue, String compileTimeValue) /*-{
 		//work around to make this work inside Titanium
 		if (typeof ($wnd) != 'undefined') {
 			if ($wnd.alert) {
@@ -93,5 +62,5 @@ public class UserAgentAsserter implements EntryPoint {
 								+ runtimeValue + "). Expect more errors.\n");
 			}
 		}
-    }-*/;
+	}-*/;
 }
