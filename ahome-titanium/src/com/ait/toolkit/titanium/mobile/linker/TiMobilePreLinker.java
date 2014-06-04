@@ -28,18 +28,18 @@ import com.google.gwt.dev.About;
 import com.google.gwt.dev.util.DefaultTextOutput;
 
 /**
- * PrimaryLinker for Titaniumj Mobile. This linker removes unnecessary GWT stuff to make the generated JS work inside Titanium User this linker when working on a titanium only
- * project.
+ * PrimaryLinker for Titaniumj Mobile. This linker removes unnecessary GWT stuff to make the generated JS work inside Titanium. Use this linker when working on a project targeting
+ * titanium and other platform
  */
-@LinkerOrder(LinkerOrder.Order.PRIMARY)
-public class TiMobilePrimaryLinker extends AbstractLinker {
+@LinkerOrder(LinkerOrder.Order.PRE)
+public class TiMobilePreLinker extends AbstractLinker {
 
 	// private final String APP_COMPILATION_FILE_NAME =
 	// "applicationCompileDateTime.txt";
 
 	@Override
 	public String getDescription() {
-		return "Titanium4j Mobile Linker";
+		return "Ahome-Titanium  Mobile Linker";
 	}
 
 	public ArtifactSet link(TreeLogger logger, LinkerContext context, ArtifactSet artifacts) throws UnableToCompleteException {

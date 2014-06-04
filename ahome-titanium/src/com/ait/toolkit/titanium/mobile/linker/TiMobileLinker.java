@@ -28,10 +28,9 @@ import com.google.gwt.dev.About;
 import com.google.gwt.dev.util.DefaultTextOutput;
 
 /**
- * Linker for Titaniumj Mobile. This linker removes unnecessary GWT stuff to
- * make the generated JS work inside Titanium
+ * Linker for Titaniumj Mobile. This linker removes unnecessary GWT stuff to make the generated JS work inside Titanium. Use this linker when working on a titanium only project.
  */
-@LinkerOrder(LinkerOrder.Order.PRE)
+@LinkerOrder(LinkerOrder.Order.PRIMARY)
 public class TiMobileLinker extends AbstractLinker {
 
 	// private final String APP_COMPILATION_FILE_NAME =
@@ -39,11 +38,10 @@ public class TiMobileLinker extends AbstractLinker {
 
 	@Override
 	public String getDescription() {
-		return "Titanium4j Mobile Linker";
+		return "Ahome-Titanium  Mobile Primary Linker";
 	}
 
-	public ArtifactSet link(TreeLogger logger, LinkerContext context,
-			ArtifactSet artifacts) throws UnableToCompleteException {
+	public ArtifactSet link(TreeLogger logger, LinkerContext context, ArtifactSet artifacts) throws UnableToCompleteException {
 
 		ArtifactSet toReturn = new ArtifactSet(artifacts);
 		DefaultTextOutput out = new DefaultTextOutput(true);
@@ -52,8 +50,7 @@ public class TiMobileLinker extends AbstractLinker {
 		out.newline();
 
 		// get compilation result
-		Set<CompilationResult> results = artifacts
-				.find(CompilationResult.class);
+		Set<CompilationResult> results = artifacts.find(CompilationResult.class);
 		if (results.size() == 0) {
 			logger.log(TreeLogger.WARN, "Requested 0 permutations");
 			return toReturn;
@@ -89,8 +86,8 @@ public class TiMobileLinker extends AbstractLinker {
 		out.print("})();");
 		out.newline();
 
-		toReturn.add(emitString(logger, out.toString(), context.getModuleName()
-				+ ".js"));
+		toReturn.add(emitString(logger, out.toString(), context.getModuleName() + ".js"));
+
 		// toReturn.add(emitString(logger, Long.toString(compilationTime),
 		// APP_COMPILATION_FILE_NAME));
 
