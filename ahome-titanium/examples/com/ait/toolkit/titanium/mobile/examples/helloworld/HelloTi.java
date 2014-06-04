@@ -19,7 +19,7 @@ public class HelloTi extends TiEntryPoint {
 		button.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				Titanium.alert("Ahome Titanium", "Hello World");
+				Titanium.alert("Ahomé IT", "Titanium and Java FTW !");
 			}
 		});
 		window.add(button);

@@ -21,6 +21,7 @@ public class HelloUiBinder extends View {
 
 	@UiField
 	Label helloWorld;
+
 	@UiField
 	Button clickMe;
 
