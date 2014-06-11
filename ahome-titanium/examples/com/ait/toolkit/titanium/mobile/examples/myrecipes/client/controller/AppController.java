@@ -5,7 +5,16 @@ import java.util.List;
 
 import com.ait.toolkit.titanium.mobile.client.Titanium;
 import com.ait.toolkit.titanium.mobile.client.api.API;
+import com.ait.toolkit.titanium.mobile.client.core.Debugger;
+import com.ait.toolkit.titanium.mobile.client.ui.ImageView;
+import com.ait.toolkit.titanium.mobile.client.ui.Label;
 import com.ait.toolkit.titanium.mobile.client.ui.TableViewRow;
+import com.ait.toolkit.titanium.mobile.client.ui.style.Font;
+import com.ait.toolkit.titanium.mobile.client.ui.style.FontWeight;
+import com.ait.toolkit.titanium.mobile.client.xml.Document;
+import com.ait.toolkit.titanium.mobile.client.xml.Element;
+import com.ait.toolkit.titanium.mobile.client.xml.NodeList;
+import com.ait.toolkit.titanium.mobile.client.xml.XML;
 import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.data.Recipe;
 import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.database.RecipeDatabase;
 import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.eventbus.EventBusUtil;
@@ -23,6 +32,7 @@ import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.events.handlers
 import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.events.handlers.XmlLoadedHandler;
 import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.ui.DetailsView;
 import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.ui.LoadingIndicatior;
+import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.ui.MainTabGroup;
 import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.ui.StartScreen;
 import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.ui.favorites.FavoritesTable;
 import com.ait.toolkit.titanium.mobile.examples.myrecipes.client.ui.recipes.RecipesTab;
@@ -185,10 +195,10 @@ public class AppController implements XmlLoadStartHandler, XmlLoadedHandler, Jso
 		TableViewRow row = new TableViewRow();
 		row.setHasChild(true);
 		row.setClassName("recipe-row");
-		row.setFilter(title);
-		row.addProperty("_title", title);
-		row.addProperty("_link", link);
-		row.addProperty("_description", description);
+		// row.setFilter(title);
+		// row.addProperty("_title", title);
+		// row.addProperty("_link", link);
+		// row.addProperty("_description", description);
 
 		// row.setTitle(items.getItem(i).getElementsByTagName("title").getItem(0).getText());
 		Label titleLabel = new Label(title);

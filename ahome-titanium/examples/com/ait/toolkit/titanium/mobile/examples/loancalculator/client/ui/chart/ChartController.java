@@ -2,8 +2,10 @@ package com.ait.toolkit.titanium.mobile.examples.loancalculator.client.ui.chart;
 
 import com.ait.toolkit.sencha.shared.client.data.Store;
 import com.ait.toolkit.sencha.touch.charts.client.Legend;
+import com.ait.toolkit.sencha.touch.charts.client.laf.Label;
 import com.ait.toolkit.sencha.touch.charts.client.series.PieSeries;
 import com.ait.toolkit.sencha.touch.charts.client.theme.Theme;
+import com.ait.toolkit.sencha.touch.client.laf.Position;
 import com.ait.toolkit.sencha.touch.client.ui.CartesianChart;
 import com.ait.toolkit.sencha.touch.client.ui.ViewPort;
 import com.ait.toolkit.titanium.mobile.client.api.API;
@@ -27,7 +29,7 @@ public class ChartController {
 		API.get().info("Interest : " + value.getInterest() + ", Payments : " + value.getLoan());
 		if (chart == null) {
 			store = new Store(DataUtil.getValues(value));
-			chart = new Chart(store);
+			chart = new CartesianChart(store);
 			chart.setTheme(Theme.DEFAULT);
 			chart.setThemeCls("pie1");
 			chart.setAnimate(true);
@@ -42,7 +44,7 @@ public class ChartController {
 			Label label = new Label();
 			label.setField("name");
 			series.setLabel(label);
-			series.setHighlight(true);
+			// series.setHi
 
 			chart.setSeries(series);
 

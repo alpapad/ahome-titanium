@@ -8,14 +8,14 @@ import com.ait.toolkit.titanium.mobile.client.core.events.RecordingInputEvent;
 import com.ait.toolkit.titanium.mobile.client.core.events.media.MediaError;
 import com.ait.toolkit.titanium.mobile.client.core.events.media.MediaEvent;
 import com.ait.toolkit.titanium.mobile.client.core.events.media.VolumentEvent;
-import com.ait.toolkit.titanium.mobile.client.core.events.ui.InteractionEvent;
+import com.ait.toolkit.titanium.mobile.client.core.events.ui.ClickEvent;
 import com.ait.toolkit.titanium.mobile.client.core.events.ui.dialog.DialogClickEvent;
 import com.ait.toolkit.titanium.mobile.client.core.events.ui.scrollview.ScrollableViewEvent;
 import com.ait.toolkit.titanium.mobile.client.core.handlers.media.LineChangeHandler;
 import com.ait.toolkit.titanium.mobile.client.core.handlers.media.RecordingInputHandler;
 import com.ait.toolkit.titanium.mobile.client.core.handlers.media.VolumeHandler;
+import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.ClickHandler;
 import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.DialogClickHandler;
-import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.InteractionHandler;
 import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.ScrollableViewScrollHandler;
 import com.ait.toolkit.titanium.mobile.client.filesystem.File;
 import com.ait.toolkit.titanium.mobile.client.filesystem.FileSystem;
@@ -25,6 +25,7 @@ import com.ait.toolkit.titanium.mobile.client.media.MediaOptionsType;
 import com.ait.toolkit.titanium.mobile.client.media.MediaSelectionCallback;
 import com.ait.toolkit.titanium.mobile.client.ui.ImageView;
 import com.ait.toolkit.titanium.mobile.client.ui.OptionDialog;
+import com.ait.toolkit.titanium.mobile.examples.holidaymemories.client.ui.MainTabGroup;
 import com.ait.toolkit.titanium.mobile.examples.holidaymemories.client.ui.audio.AudioView;
 import com.ait.toolkit.titanium.mobile.examples.holidaymemories.client.ui.photos.PhotoDisplay;
 import com.ait.toolkit.titanium.mobile.examples.holidaymemories.client.ui.photos.PhotosView;
@@ -53,9 +54,9 @@ public class AppController {
 	}
 
 	private void bindPhotoView() {
-		PhotosView.get().getChooseButton().addClickHandler(new InteractionHandler() {
+		PhotosView.get().getChooseButton().addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(InteractionEvent event) {
+			public void onClick(ClickEvent event) {
 				OptionDialog dialog = new OptionDialog();
 				dialog.setTitle("Choose an image source...");
 				dialog.setOptions("Camera", "Photo Gallery", "Cancel");
@@ -144,9 +145,9 @@ public class AppController {
 	}
 
 	private void bindSavePhoto() {
-		PhotosView.get().getSaveButton().addClickHandler(new InteractionHandler() {
+		PhotosView.get().getSaveButton().addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(InteractionEvent event) {
+			public void onClick(ClickEvent event) {
 				Blob media = PhotoDisplay.get().toImage();
 				Debugger.get().info("Bload creation success");
 				// if it does not exist create a directory called "photos"

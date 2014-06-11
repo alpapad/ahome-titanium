@@ -5,34 +5,31 @@ import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.SwitchChangeHandl
 import com.ait.toolkit.titanium.mobile.client.ui.Label;
 import com.ait.toolkit.titanium.mobile.client.ui.Switch;
 import com.ait.toolkit.titanium.mobile.client.ui.View;
-import com.ait.toolkit.titanium.mobile.client.ui.style.Color;
 import com.ait.toolkit.titanium.mobile.client.ui.style.Font;
 import com.ait.toolkit.titanium.mobile.client.ui.style.FontWeight;
 
 /**
  * MainView of the loan calculator
- *
+ * 
  */
 public class SettingsView extends View {
 
 	private final static SettingsView INSTANCE = new SettingsView();
 	private boolean autoShowChart;
 	private Switch chartOptionSwitch;
-	
-	public static SettingsView get(){
+
+	public static SettingsView get() {
 		return INSTANCE;
 	}
-	
-	private SettingsView(){
+
+	private SettingsView() {
 		this.setWidth(300);
 		this.setHeight(480 - 130);
 		this.setLeft(10);
 		this.setTop(10);
-		this.setBackgroundColor(new Color("#FFF"));
+		this.setBackgroundColor("#FFF");
 		this.setBorderRadius(5);
-		
 
-		
 		Label switchLabel = new Label("Auto Show Chart ? ");
 		switchLabel.setFont(new Font(14, "Helvetica", FontWeight.BOLD));
 		switchLabel.setWidth("auto");
@@ -40,7 +37,7 @@ public class SettingsView extends View {
 		switchLabel.setLeft(20);
 		switchLabel.setTop(20);
 		this.add(switchLabel);
-		
+
 		chartOptionSwitch = new Switch();
 		chartOptionSwitch.setRight(20);
 		chartOptionSwitch.setTop(20);
@@ -48,21 +45,20 @@ public class SettingsView extends View {
 		chartOptionSwitch.addChangeHandler(new SwitchChangeHandler() {
 			@Override
 			public void onChange(SwitchEvent event) {
-			 autoShowChart = chartOptionSwitch.getValue();
+				autoShowChart = chartOptionSwitch.getValue();
 			}
 		});
 		this.add(chartOptionSwitch);
-		
+
 	}
 
 	public boolean isAutoShowChart() {
 		return autoShowChart;
 	}
-	
-	public void setShowAutoChart(){
+
+	public void setShowAutoChart() {
 		autoShowChart = true;
 		chartOptionSwitch.setValue(true);
 	}
-	
-	
+
 }

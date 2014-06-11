@@ -6,8 +6,8 @@ import com.ait.toolkit.titanium.mobile.client.blob.Blob;
 import com.ait.toolkit.titanium.mobile.client.core.Debugger;
 import com.ait.toolkit.titanium.mobile.client.core.events.media.MediaError;
 import com.ait.toolkit.titanium.mobile.client.core.events.media.MediaEvent;
-import com.ait.toolkit.titanium.mobile.client.core.events.ui.InteractionEvent;
-import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.InteractionHandler;
+import com.ait.toolkit.titanium.mobile.client.core.events.ui.ClickEvent;
+import com.ait.toolkit.titanium.mobile.client.core.handlers.ui.ClickHandler;
 import com.ait.toolkit.titanium.mobile.client.filesystem.File;
 import com.ait.toolkit.titanium.mobile.client.filesystem.FileSystem;
 import com.ait.toolkit.titanium.mobile.client.media.Media;
@@ -35,9 +35,9 @@ public class AppController {
 	}
 
 	private void bind() {
-		MainWindow.get().getChooseButton().addClickHandler(new InteractionHandler() {
+		MainWindow.get().getChooseButton().addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(InteractionEvent event) {
+			public void onClick(ClickEvent event) {
 				Media.get().openPhotoGallery(new MediaSelectionCallback() {
 					@Override
 					public void onSuccess(MediaEvent event) {
@@ -57,9 +57,9 @@ public class AppController {
 				});
 			}
 		});
-		MainWindow.get().getEmailButton().addClickHandler(new InteractionHandler() {
+		MainWindow.get().getEmailButton().addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(InteractionEvent event) {
+			public void onClick(ClickEvent event) {
 				if (selectedImage == null) {
 					Titanium.alert("You must select an image first !!!");
 				} else {
